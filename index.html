@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="LabDilui: projeto educativo de ADS e Química para explorar cálculos de diluição ideal.">
+  <title>LabDilui · Programação + Química</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="src/calculos.js" defer></script>
+  <script src="src/interface.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Ir para o conteúdo</a>
+  <header class="wrap header">
+    <a class="brand" href="index.html" aria-label="LabDilui, início"><span class="mark" aria-hidden="true">L<span>₁</span></span><span>LabDilui<small>PROGRAMAÇÃO + QUÍMICA</small></span></a>
+    <span class="badge">Projeto educativo · v0.1</span>
+  </header>
+  <main class="wrap" id="main">
+    <section class="intro" aria-labelledby="title">
+      <p class="eyebrow">Uma fórmula, uma interface, um aprendizado.</p>
+      <h1 id="title">Diluição, passo a passo.</h1>
+      <p>Explore a relação entre concentração e volume em uma diluição ideal. Um projeto de estudo de <strong>Paulo Vicente Rocha Pinto</strong>, unindo ADS e Técnico em Química.</p>
+    </section>
+    <section class="calculator" aria-labelledby="calc-title">
+      <div class="form-side">
+        <div class="section-top"><h2 id="calc-title">Defina seu exemplo</h2><span>01 / ENTRADAS</span></div>
+        <form id="dilution-form" novalidate>
+          <div class="field"><label for="c-inicial">Concentração inicial · C₁ <span>mol/L</span></label><input id="c-inicial" name="cInicial" type="text" inputmode="decimal" value="1" required aria-describedby="input-help error-message"></div>
+          <div class="field"><label for="c-final">Concentração final · C₂ <span>mol/L</span></label><input id="c-final" name="cFinal" type="text" inputmode="decimal" value="0,1" required aria-describedby="input-help error-message"></div>
+          <div class="volume-fields"><div class="field"><label for="v-final">Volume final total · V₂</label><input id="v-final" name="vFinal" type="text" inputmode="decimal" value="100" required aria-describedby="input-help error-message"></div><div class="field unit-field"><label for="volume-unit">Unidade</label><select id="volume-unit" name="unidade"><option value="mL">mL</option><option value="L">L</option></select></div></div>
+          <p class="help" id="input-help">Use números positivos, com vírgula ou ponto decimal. O volume final é o volume total da solução.</p>
+          <p class="error" id="error-message" role="alert" hidden></p>
+          <div class="actions"><button class="button" type="submit">Calcular volume <span aria-hidden="true">→</span></button><button class="button light" type="button" id="reset-example">Restaurar exemplo</button></div>
+        </form>
+      </div>
+      <div class="result-side" id="result" aria-live="polite" aria-atomic="true">
+        <div class="section-top"><h2>Seu resultado</h2><span>02 / CÁLCULO</span></div>
+        <p class="result-label">Volume calculado da solução inicial · V₁</p>
+        <p class="value"><span id="result-value">10</span><span class="unit" id="result-unit">mL</span></p>
+        <p class="result-description" id="result-description">Exemplo: de 1 mol/L para 0,1 mol/L, com volume final total de 100 mL.</p>
+        <div class="formula"><span>C₁V₁ = C₂V₂</span><p id="calculation-step">V₁ = (0,1 × 100) ÷ 1 = 10 mL</p></div>
+        <p class="result-note" id="result-note">A quantidade de matéria do soluto é conservada no modelo ideal.</p>
+      </div>
+      <div class="error-result" id="invalid-result" hidden><h2>Vamos conferir as entradas?</h2><p>Corrija o campo indicado e calcule novamente para ver um resultado válido.</p></div>
+    </section>
+    <aside class="model-note"><span aria-hidden="true">ⓘ</span><p><strong>Modelo demonstrativo.</strong> Considera ausência de perdas e de reação do soluto. O cálculo não é um procedimento experimental validado nem uma orientação de manipulação de substâncias.</p></aside>
+    <section class="explanation" aria-labelledby="understand-title"><div><p class="eyebrow">Do conceito ao código</p><h2 id="understand-title">O que está acontecendo?</h2></div><div class="steps"><article><span>01</span><h3>Conservar o soluto</h3><p>Na diluição ideal, a quantidade de matéria do soluto permanece igual. A concentração muda quando o volume total muda.</p></article><article><span>02</span><h3>Isolar o volume inicial</h3><p>A relação C₁V₁ = C₂V₂ é reorganizada para V₁ = (C₂ × V₂) ÷ C₁. As duas concentrações usam mol/L.</p></article><article><span>03</span><h3>Conferir as entradas</h3><p>O programa aceita números positivos e impede uma concentração final maior que a inicial. O volume calculado usa a unidade escolhida.</p></article></div></section>
+  </main>
+  <footer class="wrap footer"><span>Paulo Vicente Rocha Pinto · ADS &amp; Técnico em Química</span><span>Dados ilustrativos · Projeto de estudo</span></footer>
+  <noscript><p class="noscript">Ative o JavaScript para usar a calculadora. A explicação do modelo continua disponível nesta página.</p></noscript>
+</body>
+</html>
