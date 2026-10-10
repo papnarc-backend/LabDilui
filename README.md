@@ -4,7 +4,7 @@ Calculadora educativa de diluição ideal que conecta **Análise e Desenvolvimen
 
 **Versão:** 0.1.0 · **Status:** calculadora funcional de estudo.
 
-Projeto de **Paulo Vicente Rocha Pinto**, integrante do portfólio **Chemistry Code**. O código inicial foi elaborado com apoio de IA para ser estudado, revisado e ampliado pelo autor. O funcionamento local foi confirmado pelo autor; os exemplos são ilustrativos e não utilizam dados de laboratório real.
+Projeto de **Paulo Vicente Rocha Pinto**, integrante do portfólio **Chemistry Code**. Projeto de estudo em evolução: sigo revisando o código, testando comportamentos e desenvolvendo melhorias. O funcionamento local foi confirmado pelo autor; os exemplos são ilustrativos e não utilizam dados de laboratório real.
 
 ## Experimente no seu computador
 
